@@ -177,15 +177,18 @@ function draw() {
       })
     }
 
-    if(mousePressedOver(image1)){
+    if(mousePressedOver(image1) || touches.length>0){
       ninja.scale = 0.05;
       ninja.addImage(ninjaImg);
-    }else if(mousePressedOver(image2)){
+      touches=[];
+    }else if(mousePressedOver(image2) || touches.length>0){
       ninja.scale = 0.15;
       ninja.addImage(star3);
-    }else if(mousePressedOver(image3)){
+      touches=[];
+    }else if(mousePressedOver(image3) || touches.length>0){
       ninja.scale = 0.08;
       ninja.addImage(star4);
+      touches=[];
     }
 
     if(gameState === "options2"){
